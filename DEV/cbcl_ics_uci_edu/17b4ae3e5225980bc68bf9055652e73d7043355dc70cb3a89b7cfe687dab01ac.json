@@ -1,0 +1,1 @@
+{"url": "https://cbcl.ics.uci.edu/public_data/shilab/RNAseq_elmira_09072016/DE_Genes_edgeR/Entirelist_SND1KD_vs_293-modified.txt", "content": "gene_name\t\"gene_id\" \"logFC\" \"logCPM\" \"LR\" \"PValue\" \"FDR\"\nSND1\t\"ENSG00000197157\"\t-2.95491015989681\t7.49076014842503\t59.5705896067997\t1.17985267961484e-14\t1.90027072578766e-10\n", "encoding": "ascii"}

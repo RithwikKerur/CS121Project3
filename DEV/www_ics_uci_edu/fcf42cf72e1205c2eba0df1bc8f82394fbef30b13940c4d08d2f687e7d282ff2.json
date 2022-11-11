@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~wjohnson/BIDA/Ch5/SampleSizeProportions.txt", "content": "#Two Population Sample Size for Proportions\n\n\n\n#  Comparing two proportions\nmodel\n{\ny1 ~ dbin(theta1,n1)\ny2 ~ dbin(theta2,n2)\ntheta1 ~ dbeta(1,1)\ntheta2 ~ dbeta(1,1)\nRR <- theta1/theta2\nHT <- step(RR-1)\n}\n", "encoding": "ascii"}

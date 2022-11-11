@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~wjohnson/BIDA/AppendixC/leukemia.txt", "content": " model\n {\n  for(i in 1:n1){\n   y[i] ~ dexp(theta1)\n  }\n  for(i in 1:n2){\n   x[i] ~ dexp(theta2)\n  }\n  theta1 ~ dgamma(0.01,0.01)\n  theta2 ~ dgamma(0.01,0.01)\n  median1 <- log(2)/theta1\n  median2 <- log(2)/theta2\n }", "encoding": "ascii"}

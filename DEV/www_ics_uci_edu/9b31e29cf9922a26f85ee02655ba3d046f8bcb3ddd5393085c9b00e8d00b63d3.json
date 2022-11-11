@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~eppstein/ca/replicators/b36s23-bombgun.lif", "content": "#C p192 bomber gun\n#C Dean Hickerson, 1994\nx = 54, y = 95, rule = B36/S23\no$3o$3bo$bboo20$20b3o$19bo$19bo$19bo26$36b3o$36bobbo$36bo3bo12bo$37bo\nbbo12bo$38b3o12bo$50b3o34$4boo$5bo$bb3o$bbo!\n", "encoding": "ascii"}

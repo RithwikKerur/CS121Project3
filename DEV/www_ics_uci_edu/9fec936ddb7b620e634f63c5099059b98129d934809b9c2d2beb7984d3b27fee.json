@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~eppstein/ca/replicators/b36s245-puf1200.lif", "content": "#C p1200, speed 28c/1200 = 7c/300 puffers made from 2 shuttles\n#C Dean Hickerson, 1996\nx = 13, y = 17, rule = B36/S245\n10b2o$10bobo$10bobo$10bobo$10bobo$10b2o6$2bo$b4o$obo2bo$obo2bo$b4o$2bo\n!\n", "encoding": "ascii"}

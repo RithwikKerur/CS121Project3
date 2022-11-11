@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~eppstein/ca/replicators/b36s23-p48.lif", "content": "#C p48 oscillator\n#C Dean Hickerson, 1994\nx = 23, y = 23, rule = B36/S23\no$3o$3bo$bboo3$10b3o$9bobbo$8bo3bo$8bobbo$8b3o9$19boo$19bobo$21bo$21b\noo!\n", "encoding": "ascii"}

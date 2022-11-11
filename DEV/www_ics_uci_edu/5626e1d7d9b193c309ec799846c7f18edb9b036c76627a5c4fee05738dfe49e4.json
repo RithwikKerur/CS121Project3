@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~rickl/courses/cs-171/0-ihler-2016-fq/Projects/ConnectK/scripts/run_limit", "content": "#!/bin/bash\n\nlim=4000000\nulimit -t 600 #-d $lim -v $lim -m $lim \n$*\n\n", "encoding": "ascii"}

@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~eppstein/ca/b35s236/block-pull.lif", "content": "# 4g salvo pulls a block backward 2 squares (DH)\nx = 40, y = 11, rule = B35/S236\nbobo$ob2o$bobo$9b2o$9b3o26b2o$9b2o11bobo13b2o$21bob2o$22bobo$32b2o$32b\n3o$32b2o!\n", "encoding": "ascii"}

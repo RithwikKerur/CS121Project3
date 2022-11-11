@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~eppstein/ca/replicators/b36s23-back-rake.lif", "content": "#C p48 backwards rake\n#C Dean Hickerson, 1994\nx = 21, y = 20, rule = B36/S23\n12boo$13boo$10boboo$10b3o$11bo8bo$20bo$20bo$$3bo$bboo$bobo$3o6$5bo$5bo\n$5bo!\n\n", "encoding": "ascii"}

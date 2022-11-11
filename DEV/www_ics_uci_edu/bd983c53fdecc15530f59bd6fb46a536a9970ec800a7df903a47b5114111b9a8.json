@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~rickl/courses/cs-171/0-ihler-2016-fq/Projects/ConnectK/scripts/test_py", "content": "#!/bin/bash\n\nmodule load java/1.8.0_20 python/3.5.1 gcc/4.8.2\n\npython3 $1 < boards/0.txt\n", "encoding": "ascii"}

@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~gabe/bibtex/MA_Preemptive_2005.txt", "content": "@inproceedings{MA:05a,\n  author = {Gabor Madl and Sherif Abdelwahed},\n  title = {{Formal Verification of Distributed Preemptive Real-time Scheduling}},\n  booktitle = {{ISIS Technical Report}},\n  year = {2005}\n}\n", "encoding": "ascii"}

@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~magda/Courses/ics167/demo_1/Makefile", "content": "all:\tdemo-01\n\n# uncomment the next line for Solaris platforms\n# LIBS=-lsocket\n\ndemo-01:\tdemo-01.c\n\tgcc -o demo-01 demo-01.c $(LIBS)\n\nclean:\n\trm -f demo-01\n", "encoding": "ascii"}

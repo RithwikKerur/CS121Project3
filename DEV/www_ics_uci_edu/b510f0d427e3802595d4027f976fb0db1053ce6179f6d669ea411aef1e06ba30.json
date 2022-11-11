@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~aburtsev/238P/2018fall/discussions/discussion04-c-bitfields-xv6-setup-gdb/backup_theme/Makefile", "content": "all:\n\tpdflatex -shell-escape main.tex\n\nclean:\n\t@rm -f *.pdf *.aux *.log *.nav *.out *.toc *.snm *.vrb\n\t@rm -rf _minted-demo/\n", "encoding": "ascii"}

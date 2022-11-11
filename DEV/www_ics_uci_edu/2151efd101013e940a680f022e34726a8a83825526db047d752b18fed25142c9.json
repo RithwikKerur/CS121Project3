@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~gabe/bibtex/MA_Emsoft_2005.txt", "content": "@inproceedings{MA:05,\n  author = {Gabor Madl and Sherif Abdelwahed},\n  title = {{Model-based Analysis of Distributed Real-time Embedded System Composition}},\n  booktitle = {{Proceedings of EMSOFT}},\n  year = {2005},\n  month = {September},\n  pages = {371--374}\n}\n", "encoding": "ascii"}

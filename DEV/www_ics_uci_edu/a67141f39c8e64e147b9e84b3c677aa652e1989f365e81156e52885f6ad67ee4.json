@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~minhaenl/lab/smokers.txt", "content": "ID\tfirst\tsecond\tthird\tfourth\tfifth\tsixth\tlevel\r\n1\t69\t52\t71\t58\t59\t65\tNon-Smokers\r\n2\t55\t60\t78\t58\t62\t66\tLight Smokers\r\n3\t66\t81\t70\t77\t57\t79\tModerate Smokers\r\n4\t91\t72\t81\t67\t95\t84\tHeavy Smokers\r\n", "encoding": "ascii"}

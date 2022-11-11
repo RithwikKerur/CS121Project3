@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~wjohnson/BIDA/Ch4/Ch4Rcode.txt", "content": "Bayes Book\nCh 4:  Fundamental Ideas II\nR code\n\n\n# Figure 4.1\ny <- 2\nn <- 10\ntheta <- seq(0,1,0.001)\nlik <-choose(n,y)*theta^y*(1-theta)^(n-y)\nplot(theta,lik,type=\"l\",lwd=2,xlab=expression(theta),ylab=expression(paste(\"L(\",theta,\" |y)\")))\n\n", "encoding": "ascii"}

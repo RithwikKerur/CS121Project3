@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~rickl/courses/cs-271/projects_old_see_AI-projects/connect-k/NewTournament/ConnectK-master-gborje-from-github/ConnectK-master/.gitignore", "content": "# Debug\nDebug/*\ngamelog.txt\n\n# Cache\n*.aps\n*.ncb\n*.opensdf\n*.sdf\n", "encoding": "ascii"}

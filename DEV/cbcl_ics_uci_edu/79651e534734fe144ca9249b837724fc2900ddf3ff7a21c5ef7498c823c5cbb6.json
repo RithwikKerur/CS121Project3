@@ -1,0 +1,1 @@
+{"url": "https://cbcl.ics.uci.edu/public_data/DANN/deepnet/eval.pbtxt", "content": "stopcondition {\n  all_processed: true\n}\nbatchsize: 100\n", "encoding": "ascii"}

@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~goodrich/teach/ics160e/hw/hw2-hint.html", "content": "Use one stack for the enqueues and one for the dequeues.\n(You still need to say how and you also need to do the amortized\nanalysis.)\n", "encoding": "ascii"}

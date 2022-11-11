@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~wjohnson/BIDA/Ch8/OringData.txt", "content": "Flight\tFailure\tTemperature\n14\t1\t53\n9\t1\t57\n23\t1\t58\n10\t1\t63\n1\t0\t66\n5\t0\t67\n13\t0\t67\n15\t0\t67\n4\t0\t68\n3\t0\t69\n8\t0\t70\n17\t0\t70\n2\t1\t70\n11\t1\t70\n6\t0\t72\n7\t0\t73\n16\t0\t75\n21\t1\t75\n19\t0\t76\n22\t0\t76\n12\t0\t78\n20\t0\t79\n18\t0\t81\n", "encoding": "ascii"}

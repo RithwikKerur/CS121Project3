@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~eppstein/ca/replicators/b36s124-rng.lif", "content": "#C c/6 spaceship based pseudorandom number generator by Dean Hickerson\nx = 15, y = 6, rule = B36/S124\n11bo$obo3bo4bobo$obo3bo4b2obo$obo3bo4b2obo$obo3bo4bobo$11bo!\n", "encoding": "ascii"}

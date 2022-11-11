@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~eppstein/PADS/.git/config", "content": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n[remote \"origin\"]\n\tfetch = +refs/heads/*:refs/remotes/origin/*\n\turl = /home/eppstein/git/PADS\n[branch \"master\"]\n\tremote = origin\n\tmerge = refs/heads/master\n", "encoding": "ascii"}

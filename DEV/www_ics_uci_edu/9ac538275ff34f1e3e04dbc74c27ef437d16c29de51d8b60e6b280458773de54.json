@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~eppstein/ca/replicators/b36s23-side-rake.lif", "content": "#C p48 sideways rake\n#C David I. Bell, 1994\nx = 15, y = 20, rule = B36/S23\n11b3o$10bo3bo$9bo4bo$8bobbobbo$8bo4bo$8bo3bo$9b3o4$14bo$14bo$14bo$$bb\n3o$bobbo$o3bo$obbo$3o$9b3o!\n", "encoding": "ascii"}

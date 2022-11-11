@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~rickl/courses/tmp/tournament_rickl_email_20150225/tournament/exampleBatch.bat.txt", "content": "java -jar Tournament.jar c2.exe DummyAI.class c2.exe c2.exe c2.exe c2.exe DummyAI.class\r\npause", "encoding": "ascii"}

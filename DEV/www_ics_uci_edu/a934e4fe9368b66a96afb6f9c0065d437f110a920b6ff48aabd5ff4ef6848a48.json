@@ -1,0 +1,1 @@
+{"url": "https://www.ics.uci.edu/~eppstein/ca/replicators/b25s13-ss.lif", "content": "#C 3c/3 spaceship\n#C Discovered by Jason Summers, 1999\nx = 24, y = 16, rule = B25/S13\n9bo4bo2$6bob2o4b2obo$3bo4bo6bo4bo2$9b2o2b2o$o9b4o9bo$2o3bo3b2o2b2o3bo\n3b2o$2o4bobo2b2o2bobo4b2o$10bo2bo$8b2o4b2o3$6b2o8b2o$6b2o8b2o$6b2o8b2o!\n", "encoding": "ascii"}

@@ -46,9 +46,11 @@ def index():
     f = open("doc_index_stem.json", 'w')
     f.write(j)
     f.close()
+
+    print(len(unique_pages))
     
 if __name__ == '__main__':
-    #index()
+    index()
     
     with open('inverted_index_stem.json', encoding='utf-8') as f:
       data = json.load(f)

@@ -22,7 +22,6 @@ def tokenize(file: str) -> list:
     with open(file, encoding='utf-8') as f:
       data = json.load(f)
       parser = BeautifulSoup(data['content'], 'xml')
-      print(data['encoding'])
       f = io.StringIO(parser.get_text())
       if f.readable():
         while True:
@@ -36,9 +35,10 @@ def tokenize(file: str) -> list:
               else:
                 if curr_token != []:
                   new_token = "".join(curr_token).lower()
-                  #if new_token not in stopwords and len(new_token) > 1:
+                  #First we stem the token then check if the length is greater than 1
+                  new_token = ps.stem(new_token)
                   if len(new_token) > 1:
-                    all_tokens.append(ps.stem(new_token))
+                    all_tokens.append(new_token.lower())
                   curr_token = []
           except Exception as e:
             all_tokens.append("".join(curr_token).lower())

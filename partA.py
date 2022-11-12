@@ -4,6 +4,8 @@ import sys
 import json 
 import io
 from bs4 import BeautifulSoup
+from nltk.stem import PorterStemmer
+
 
 stopwords = set(['a',	'about',	'above',	'after',	'again',	'against',	'all',	'am',	'an',	'and',	'any',	'are','as',	'at',	'be',	'because',	'been',	'before',	'being',	'below',	'between',	'both',	'but',	'by',	'cannot',	'could',	'did',		'do',	'does',		'doing',	'down',	'during',	'each',	'few',	'for',	'from',	'further',	'had',	'has',		'have',		'having',	'he',	'her',	'here',		'hers',	'herself',	'him',	'himself',	'his',	'how',		'i','if',	'in',	'into',	'is',		'it',		'its',	'itself',		'me',	'more',	'most',		'my',	'myself',	'no',	'nor',	'not',	'of',	'off',	'on',	'once',	'only',	'or',	'other',	'ought',	'our',	'ours',	'out',	'over',	'own',	'same',		'she',		'should',		'so',	'some',	'such',	'than',	'that',		'the',	'their',	'theirs',	'them',	'themselves',	'then',	'there',		'these',	'they',		'this',	'those',	'through',	'to',	'too',	'under',	'until',	'up',	'very',	'was',	'we',			'were',		'what',	'when',	'where',	'which',	'while',	'who',	'whom',	'why',	'with',	'would',	'you','your',	'yours',	'yourself',	'yourselves',	'ourselves'])
 
@@ -16,6 +18,7 @@ def tokenize(file: str) -> list:
   curr_token = []
   #f'Downloads/{file}'
   try:
+    ps = PorterStemmer()
     with open(file, encoding='utf-8') as f:
       data = json.load(f)
       parser = BeautifulSoup(data['content'], 'xml')
@@ -33,8 +36,9 @@ def tokenize(file: str) -> list:
               else:
                 if curr_token != []:
                   new_token = "".join(curr_token).lower()
-                  if new_token not in stopwords and len(new_token) > 1:
-                    all_tokens.append(new_token)
+                  #if new_token not in stopwords and len(new_token) > 1:
+                  if len(new_token) > 1:
+                    all_tokens.append(ps.stem(new_token))
                   curr_token = []
           except Exception as e:
             all_tokens.append("".join(curr_token).lower())

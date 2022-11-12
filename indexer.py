@@ -38,18 +38,19 @@ def index():
         
 
     j = json.dumps(inverted_index)
-    f = open("inverted_index.json", 'w')
+    f = open("inverted_index_stem.json", 'w')
     f.write(j)
     f.close()
 
     j = json.dumps(doc_index)
-    f = open("doc_index.json", 'w')
+    f = open("doc_index_stem.json", 'w')
     f.write(j)
     f.close()
     
 if __name__ == '__main__':
     #index()
-    with open('inverted_index.json', encoding='utf-8') as f:
+    
+    with open('inverted_index_stem.json', encoding='utf-8') as f:
       data = json.load(f)
       print(len(data))
-                
+             

@@ -21,7 +21,7 @@ def index():
                 f = os.path.join(directory, dirname, filename)
                 all_tokens = partA.tokenize(f)
                 if len(all_tokens) < 10000:
-                    doc_index[doc_count] = filename
+                    doc_index[doc_count] = f
                     with open(f, 'r') as curr_file:
                         url = curr_file.readline()
                         defrag_url = url.split('#')[0]
@@ -47,7 +47,7 @@ def index():
     indexed_index = dict()
     for item, freq in sorted(inverted_index.items(), key = lambda x: x[0]):
         item = unidecode.unidecode(item)
-        to_write = f"{item},{str(freq)}\n"
+        to_write = f"{item}?{str(freq)}\n"
         
         f.write(to_write)
         if item[0] != prev:

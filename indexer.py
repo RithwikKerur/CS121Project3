@@ -38,7 +38,7 @@ def index():
                     words = defaultdict(int)
 
                     doc_count += 1
-        break
+        
 
     j = json.dumps(inverted_index)
     f = open("Past/inverted_index_stem.txt", 'w')

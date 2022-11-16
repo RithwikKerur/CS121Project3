@@ -11,25 +11,27 @@ def query():
     ps = PorterStemmer()
     with open('Past/inverted_index_stem.txt', 'r') as f:
 
-        with open ('Past/indexed_index1.json') as l:
+        with open ('Past/indexed_index.json') as l:
             letter_index = json.load(l)
             term_maps = dict()
             for i in range(len(query)):
+                q = ps.stem(query[i].lower())
                 curr_index = letter_index[query[i][0]]#query[i][0]
                 f.seek(curr_index)
                 line = f.readline()
+                print(f'line = {line}')
+                
                 first, second = line.split('?')
-                first = ps.stem(first)
-                q = query[i].lower()
+                ans = []
                 while(first <= q):
                     if first == q:
                         second = eval(second)
                         doc_list.append(set(second.keys()))
                     line = f.readline()
                     first, second = line.split('?')
-                    first = ps.stem(first)
     
     #Gets all documents in common
+    print(doc_list)
     doc_list = set.intersection(*doc_list)
     print(doc_list)
 
@@ -44,7 +46,7 @@ def query():
                 results.append(content['url'])
 
     print(results)
-
+    
     #return 5 closest sites (ones with the most number of total query words)
 
     #Load doc index into memory and return top 5 urls 

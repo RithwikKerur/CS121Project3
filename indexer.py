@@ -2,6 +2,9 @@ import os
 from collections import defaultdict
 import partA
 import json
+import re
+import unidecode
+
 
 def index():
     directory = 'Dev'
@@ -38,29 +41,31 @@ def index():
         break
 
     j = json.dumps(inverted_index)
-    f = open("inverted_index_stem.txt", 'w')
+    f = open("Past/inverted_index_stem.txt", 'w')
     prev = 0
     seeked = 0
     indexed_index = dict()
     for item, freq in sorted(inverted_index.items(), key = lambda x: x[0]):
-        to_write = item + ', ' + str(freq) + '\n'
+        item = unidecode.unidecode(item)
+        to_write = f"{item},{str(freq)}\n"
+        
         f.write(to_write)
         if item[0] != prev:
             prev = item[0]
             indexed_index[prev] = seeked
         
-        seeked+= len(to_write)
+        seeked+= len(str(to_write))
 
 
     f.close()
 
     i = json.dumps(indexed_index)
-    f = open("indexed_index.json", 'w')
+    f = open("Past/indexed_index.json", 'w')
     f.write(i)
     f.close()
 
     j = json.dumps(doc_index)
-    f = open("doc_index_stem.json", 'w')
+    f = open("Past/doc_index_stem.json", 'w')
     f.write(j)
     f.close()
 

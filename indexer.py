@@ -35,11 +35,28 @@ def index():
                     words = defaultdict(int)
 
                     doc_count += 1
-        
+        break
 
     j = json.dumps(inverted_index)
-    f = open("inverted_index_stem.json", 'w')
-    f.write(j)
+    f = open("inverted_index_stem.txt", 'w')
+    prev = 0
+    seeked = 0
+    indexed_index = dict()
+    for item, freq in sorted(inverted_index.items(), key = lambda x: x[0]):
+        to_write = item + ', ' + str(freq) + '\n'
+        f.write(to_write)
+        if item[0] != prev:
+            prev = item[0]
+            indexed_index[prev] = seeked
+        
+        seeked+= len(to_write)
+
+
+    f.close()
+
+    i = json.dumps(indexed_index)
+    f = open("indexed_index.json", 'w')
+    f.write(i)
     f.close()
 
     j = json.dumps(doc_index)
@@ -52,7 +69,5 @@ def index():
 if __name__ == '__main__':
     index()
     
-    with open('inverted_index_stem.json', encoding='utf-8') as f:
-      data = json.load(f)
-      print(len(data))
+    
              

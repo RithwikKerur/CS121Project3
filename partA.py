@@ -38,7 +38,7 @@ def tokenize(file: str) -> list:
                   #First we stem the token then check if the length is greater than 1
                   new_token = ps.stem(new_token)
                   if len(new_token) > 1:
-                    all_tokens.append(unidecode.unidecode(new_token.lower()))
+                    all_tokens.append(unidecode.unidecode(new_token).replace(" ", "").lower())
                   curr_token = []
           except Exception as e:
             new_token = "".join(curr_token).lower()

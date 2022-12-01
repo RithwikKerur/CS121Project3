@@ -5,8 +5,9 @@ import json
 import re
 import unidecode
 from pathlib import Path
+import math
 
-
+TOTAL_NUMBER_DOCUMENTS = 55284
 def mergePartialIndices():
     curr_dir = os.getcwd()
     files = []
@@ -30,6 +31,7 @@ def mergePartialIndices():
     while(len(lines) != 0):
         to_write = []
         prev = None
+        tfidf = defaultdict(int)
         
         #iterate through all the lines and get a list of all that have the same token 
         for line in range(len(lines)):
@@ -62,8 +64,11 @@ def mergePartialIndices():
             del files[line]
             del lines[line]
 
+        doc_frequency = len(my_dict[prev])
+        for doc_id, term_frequency in my_dict[prev].items():
+            tfidf[doc_id] += ((1 + math.log2(term_frequency)) * math.log2(TOTAL_NUMBER_DOCUMENTS/doc_frequency))
         #Writing the token and accompnaying dictionary to disk
-        to_write1 = f'{token}?{dict(sorted(my_dict[prev].items(), key = lambda x: x[0]))}\n'
+        to_write1 = f'{token}?{dict(sorted(tfidf.items(), key = lambda x: x[0]))}\n'
         merged.write(to_write1)
 
         if token[0] != prev_token:
@@ -107,12 +112,14 @@ def index():
                     #If the document isn't wasteful text
 
 
-                    doc_index[doc_count] = f #add the doc to our doc index
+                    #doc_index[doc_count] = f #add the doc to our doc index
                     with open(f, 'r') as curr_file:
                         #add the url to our list of unique pages
-                        url = curr_file.readline()
+                        content = json.load(curr_file)
+                        url = content['url']
                         defrag_url = url.split('#')[0]
                         unique_pages.add(defrag_url.rstrip('\n'))
+                        doc_index[doc_count] = defrag_url
                     
                     #Get the frequencies for all our words
                     words = partA.countFrequencies(all_tokens, words)

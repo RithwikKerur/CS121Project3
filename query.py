@@ -8,10 +8,10 @@ import time
 TOTAL_NUMBER_DOCUMENTS = 55306
 
 def query(term):
+    tic = time.perf_counter()
     answer = []
     with open ('Past/doc_index_stem.json') as d:
         doc_index = json.load(d)
-        tic = time.perf_counter()
         query = term.split(' ')
         doc_list = []
         doc_dicts = []

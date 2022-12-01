@@ -10,10 +10,10 @@
             <p><input type = "text" name = "nm" style="height: 3em; width: 400px;" /></p>
             <p><input type = "submit" value = "submit" /></p>
         </form>
-        <h1>Search Results for {{ name }}:</h1>
+        <h3>Search results for "{{ name }}"</h3>
         {% for result in results %}
 
-        <h2>{{ loop.index }}. <a target="_blank" href="{{result}}">{{ result }}</a></h2>
+        <h4>{{ loop.index }}. <a target="_blank" href="{{result}}">{{ result }}</a></h4>
 
         {% endfor %}
 

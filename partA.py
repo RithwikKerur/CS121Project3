@@ -22,6 +22,67 @@ def tokenize(file: str) -> list:
     with open(file, encoding='utf-8') as f:
       data = json.load(f)
       parser = BeautifulSoup(data['content'], 'xml')
+      curr_token = []
+
+      if parser is not None:
+        for tags in parser.findAll('b'):
+          for i in tags.get_text().strip():
+            for char in i:
+              if char.isalnum():
+                curr_token.append(char)
+              else:
+                if curr_token != []:
+                  new_token = "".join(curr_token).lower()
+                  #First we stem the token then check if the length is greater than 1
+                  new_token = ps.stem(new_token)
+                  if len(new_token) > 1:
+                    all_tokens.append(unidecode.unidecode(new_token).replace(" ", "").lower())
+                  curr_token = []
+            
+
+        for tags in parser.findAll('h1'):
+          for i in tags.get_text().strip():
+            for char in i:
+              if char.isalnum():
+                curr_token.append(char)
+              else:
+                if curr_token != []:
+                  new_token = "".join(curr_token).lower()
+                  #First we stem the token then check if the length is greater than 1
+                  new_token = ps.stem(new_token)
+                  if len(new_token) > 1:
+                    all_tokens.append(unidecode.unidecode(new_token).replace(" ", "").lower())
+                  curr_token = []
+        
+        for tags in parser.findAll('h2'):
+          for i in tags.get_text().strip():
+            for char in i:
+              if char.isalnum():
+                curr_token.append(char)
+              else:
+                if curr_token != []:
+                  new_token = "".join(curr_token).lower()
+                  #First we stem the token then check if the length is greater than 1
+                  new_token = ps.stem(new_token)
+                  if len(new_token) > 1:
+                    all_tokens.append(unidecode.unidecode(new_token).replace(" ", "").lower())
+                  curr_token = []
+        
+        if parser.find('title') is not None:
+          for tags in parser.find('title'):
+            for i in tags.get_text().strip():
+              for char in i:
+                if char.isalnum():
+                  curr_token.append(char)
+                else:
+                  if curr_token != []:
+                    new_token = "".join(curr_token).lower()
+                    #First we stem the token then check if the length is greater than 1
+                    new_token = ps.stem(new_token)
+                    if len(new_token) > 1:
+                      all_tokens.append(unidecode.unidecode(new_token).replace(" ", "").lower())
+                    curr_token = []
+      
       f = io.StringIO(parser.get_text())
       if f.readable():
         while True:

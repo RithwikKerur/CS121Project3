@@ -46,7 +46,6 @@ def mergePartialIndices():
 
         #For all the lines we have to write we merge them into one list
         for line in to_write:
-            print(line)
             token, docs = lines[line].split('?')
             my_dict[prev].update(eval(docs))
 
@@ -183,7 +182,7 @@ def index():
     print(len(unique_pages))
     
 if __name__ == '__main__':
-    #index()
+    index()
     mergePartialIndices()
     
     

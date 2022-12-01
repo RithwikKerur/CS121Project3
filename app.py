@@ -1,12 +1,14 @@
-from flask import Flask, redirect, url_for, request
+from flask import Flask, redirect, url_for, request, render_template
 import query
 
 app = Flask(__name__)
 
 @app.route('/success/<name>')
 def success(name):
-    query.query(name)
-    return 'welcome %s' % name
+    results = query.query(name)
+    #results = ("test", "test", "time")
+    return render_template("results.html", name=name, results=results)
+    #return 'welcome %s' % name
 
 @app.route('/search', methods=['POST', 'GET'])
 def search():

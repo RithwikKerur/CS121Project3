@@ -7,18 +7,21 @@ import time
 
 TOTAL_NUMBER_DOCUMENTS = 55306
 
-def query():
+def query(term):
+    answer = []
     with open ('Past/doc_index_stem.json') as d:
         doc_index = json.load(d)
-        query = input('Enter Query: ')
         tic = time.perf_counter()
-        query = query.split(' ')
+        query = term.split(' ')
+        doc_list = []
+        doc_dicts = []
         ps = PorterStemmer()
         tfidf = defaultdict(int) #doc_id : tf-idf
         with open('Past/inverted_index_stem.txt', 'r') as f:
 
             with open ('Past/indexed_index.json') as l:
                 letter_index = json.load(l)
+                term_maps = dict()
                 for i in range(len(query)):
                     q = ps.stem(query[i].lower())
                     if len(q) > 1 and q[0:2] in letter_index:
@@ -26,7 +29,9 @@ def query():
                         f.seek(curr_index)
                         line = f.readline()
                         
+                        
                         first, second = line.split('?')
+                        ans = []
                         while(first <= q):
                             if first == q:
                                 second = eval(second)
@@ -52,16 +57,19 @@ def query():
                 results.append(doc_index[str(answers[i][0])])
                 if i == 10:
                     break
+
             #print(results[:5])
 
             toc = time.perf_counter()
-            for i in range(len(results)):
+            for i in range(len(results[:10])):
                 print(f'{i+1}: {results[i]}')
+                answer.append(f'{results[i]}')
+            answer.append(f"Ran in {toc - tic:0.4f} seconds")
             print(f"Ran in {toc - tic:0.4f} seconds")
         else:
             print("No documents found")
 
-    
+    return answer
     #return 5 closest sites (ones with the most number of total query words)
 
     #Load doc index into memory and return top 5 urls 

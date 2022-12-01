@@ -13,25 +13,20 @@ def query():
         query = input('Enter Query: ')
         tic = time.perf_counter()
         query = query.split(' ')
-        doc_list = []
-        doc_dicts = []
         ps = PorterStemmer()
         tfidf = defaultdict(int) #doc_id : tf-idf
         with open('Past/inverted_index_stem.txt', 'r') as f:
 
             with open ('Past/indexed_index.json') as l:
                 letter_index = json.load(l)
-                term_maps = dict()
                 for i in range(len(query)):
                     q = ps.stem(query[i].lower())
-                    if q[0] in letter_index:
-                        curr_index = letter_index[q[0]]#query[i][0]
+                    if len(q) > 1 and q[0:2] in letter_index:
+                        curr_index = letter_index[q[0:2]]#query[i][0]
                         f.seek(curr_index)
                         line = f.readline()
                         
-                        
                         first, second = line.split('?')
-                        ans = []
                         while(first <= q):
                             if first == q:
                                 second = eval(second)
@@ -52,13 +47,15 @@ def query():
         if len(tfidf) > 0:
 
             results = []
-            for i in sorted(tfidf.items(), key = lambda x : x[1], reverse=True):
-                results.append(doc_index[str(i[0])])
-
+            answers = sorted(tfidf.items(), key = lambda x : x[1], reverse=True)
+            for i in range(len(answers)):
+                results.append(doc_index[str(answers[i][0])])
+                if i == 10:
+                    break
             #print(results[:5])
 
             toc = time.perf_counter()
-            for i in range(len(results[:10])):
+            for i in range(len(results)):
                 print(f'{i+1}: {results[i]}')
             print(f"Ran in {toc - tic:0.4f} seconds")
         else:

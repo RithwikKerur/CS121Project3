@@ -71,8 +71,8 @@ def mergePartialIndices():
         to_write1 = f'{token}?{dict(sorted(tfidf.items(), key = lambda x: x[0]))}\n'
         merged.write(to_write1)
 
-        if token[0] != prev_token:
-            prev_token = token[0]
+        if token[0:2] != prev_token:
+            prev_token = token[0:2]
             indexed_index[prev_token] = seeked
         
         seeked+= len(str(to_write1))
@@ -189,7 +189,7 @@ def index():
     print(len(unique_pages))
     
 if __name__ == '__main__':
-    index()
+    #index()
     mergePartialIndices()
     
     
